@@ -1,0 +1,47 @@
+// 文件位置：~/assets/scss/custom/_custom.scss
+
+blockquote.quote {
+    position: relative;
+    margin: 2em auto;
+    padding-left: 3em;
+    border: none;
+    &::before {
+        position: absolute;
+        left: 0;
+        content: '“';
+        color: var(--color-contrast-low);
+        font-family: 'JetBrains Mono', 'Amstelvar', 'Noto Serif SC', serif;
+        font-size: 3em;
+        font-weight: bold;
+        line-height: 1;
+    }
+    &.poetry {
+        display: table;
+        padding: 0;
+        &::before {
+            left: -1em;
+        }
+        p:last-child {
+            margin: 0;
+        }
+    }
+    &.en {
+        p {
+            line-height: 1.618;
+            text-align: left;
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+        }
+    }
+}
+@media (max-width: $maxWidth) {
+    blockquote.quote {
+        &.poetry {
+            padding-left: 3em;
+            &::before {
+                left: 0;
+            }
+        }
+    }
+}

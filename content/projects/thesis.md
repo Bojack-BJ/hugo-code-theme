@@ -16,6 +16,59 @@ series = ["Research Project"]
 
 
 <!--more-->
+<div class="video-strip" data-strip>
+  <button class="video-strip__arrow" type="button" aria-label="Scroll left" data-strip-prev>&lsaquo;</button>
+  <div class="video-strip__viewport" data-strip-viewport>
+    <div class="video-strip__track">
+      <figure class="video-strip__card">
+        <video class="video-strip__media" autoplay muted loop playsinline>
+          <source src="../../uploads/lemon-cup.MOV" type="video/quicktime">
+        </video>
+      </figure>
+      <figure class="video-strip__card">
+        <video class="video-strip__media" autoplay muted loop playsinline>
+          <source src="../../uploads/cube-box.MOV" type="video/quicktime">
+        </video>
+      </figure>
+      <figure class="video-strip__card">
+        <video class="video-strip__media" autoplay muted loop playsinline>
+          <source src="../../uploads/cube-can.MOV" type="video/quicktime">
+        </video>
+      </figure>
+      <figure class="video-strip__card">
+        <video class="video-strip__media" autoplay muted loop playsinline>
+          <source src="../../uploads/banana-basket.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <figure class="video-strip__card">
+        <video class="video-strip__media" autoplay muted loop playsinline>
+          <source src="../../uploads/cup-box.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <figure class="video-strip__card">
+        <video class="video-strip__media" autoplay muted loop playsinline>
+          <source src="../../uploads/cup2.MOV" type="video/quicktime">
+        </video>
+      </figure>
+      <figure class="video-strip__card">
+        <video class="video-strip__media" autoplay muted loop playsinline>
+          <source src="../../uploads/cultery1.MOV" type="video/quicktime">
+        </video>
+      </figure>
+      <figure class="video-strip__card">
+        <video class="video-strip__media" autoplay muted loop playsinline>
+          <source src="../../uploads/cultery2.MOV" type="video/quicktime">
+        </video>
+      </figure>
+      <figure class="video-strip__card">
+        <video class="video-strip__media" autoplay muted loop playsinline>
+          <source src="../../uploads/cup1.MOV" type="video/quicktime">
+        </video>
+      </figure>
+    </div>
+  </div>
+  <button class="video-strip__arrow" type="button" aria-label="Scroll right" data-strip-next>&rsaquo;</button>
+</div>
 
 Open-world object manipulation has emerged as a popular research frontier in robotics. While recent advances in vision-language-action (VLA) models have achieved impressive results, they typically rely on large amounts of task-specific action data for training. This thesis aims to enable a manipulator to perform open-world object manipulation tasks without any action demonstrations. Instead of learning direct action mappings, we focus on understanding object dynamics.
 
@@ -96,7 +149,102 @@ Experimentally, the proposed framework is able to perform multiple open-set mani
   </div>
 </div>
 
+<div class="video-carousel" data-carousel>
+  <p class="video-carousel__corner-title">Fine instruction understanding</p>
+  <div class="video-carousel__viewport" data-carousel-track>
+    <figure class="video-carousel__slide" data-title="Put cup upside on box">
+      <video class="video-carousel__media" controls>
+        <source src="../../uploads/cup2.MOV" type="video/quicktime">
+        Your browser does not support the video tag.
+      </video>
+    </figure>
+    <figure class="video-carousel__slide" data-title="Put cup upside down on box">
+      <video class="video-carousel__media" controls>
+        <source src="../../uploads/cup1.MOV" type="video/quicktime">
+        Your browser does not support the video tag.
+      </video>
+    </figure>
+    <figure class="video-carousel__slide" data-title="Put cultery between boxes">
+      <video class="video-carousel__media" controls>
+        <source src="../../uploads/cultery1.MOV" type="video/quicktime">
+        Your browser does not support the video tag.
+      </video>
+    </figure>
+    <figure class="video-carousel__slide" data-title="Put cultery on boxes like a bridge">
+      <video class="video-carousel__media" controls>
+        <source src="../../uploads/cultery2.MOV" type="video/quicktime">
+        Your browser does not support the video tag.
+      </video>
+    </figure>
+  </div>
+  <div class="video-carousel__meta">
+    <span class="video-carousel__title" data-carousel-title>Blue Cup</span>
+  </div>
+  <div class="video-carousel__controls">
+    <button class="video-carousel__arrow" type="button" aria-label="Previous video" data-carousel-prev>&larr;</button>
+    <div class="video-carousel__dots" data-carousel-dots></div>
+    <button class="video-carousel__arrow" type="button" aria-label="Next video" data-carousel-next>&rarr;</button>
+  </div>
+</div>
+
 <style>
+.video-strip {
+  margin: 2.5rem auto 0;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.video-strip__viewport {
+  overflow: hidden;
+  flex: 1;
+}
+
+.video-strip__track {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.25rem 0;
+}
+
+.video-strip__card {
+  flex: 0 0 220px;
+  margin: 0;
+  border-radius: 14px;
+  background: rgba(16, 21, 46, 0.65);
+  padding: 0.65rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.video-strip__media {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #05060f;
+}
+
+.video-strip__arrow {
+  border: none;
+  background: rgba(20, 26, 51, 0.85);
+  color: #f6f7fb;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.video-strip__arrow:hover {
+  transform: translateY(-2px);
+}
+
+.video-strip__arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .project-download {
   margin: 1.5rem auto 0;
   text-align: center;
@@ -294,6 +442,87 @@ Experimentally, the proposed framework is able to perform multiple open-set mani
     });
 
     goTo(0);
+  });
+
+  const strips = document.querySelectorAll('[data-strip]');
+  strips.forEach((strip) => {
+    const viewport = strip.querySelector('[data-strip-viewport]');
+    const track = strip.querySelector('.video-strip__track');
+    const prev = strip.querySelector('[data-strip-prev]');
+    const next = strip.querySelector('[data-strip-next]');
+    if (!viewport || !track) {
+      return;
+    }
+
+    const originalCards = Array.from(track.children);
+    originalCards.forEach((card) => {
+      const clone = card.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    const ensurePlayback = (video) => {
+      if (!video) {
+        return;
+      }
+      video.muted = true;
+      video.setAttribute('playsinline', 'true');
+      video.setAttribute('preload', 'auto');
+      const play = () => video.play().catch(() => {});
+      if (video.readyState >= 2) {
+        play();
+      } else {
+        video.addEventListener('canplay', play, { once: true });
+      }
+    };
+
+    track.querySelectorAll('.video-strip__media').forEach((video) => {
+      video.removeAttribute('controls');
+      ensurePlayback(video);
+    });
+
+    const scrollChunk = () => Math.max(viewport.clientWidth * 0.6, 160);
+    const scrollBy = (delta) => viewport.scrollBy({ left: delta, behavior: 'smooth' });
+
+    prev?.addEventListener('click', () => scrollBy(-scrollChunk()));
+    next?.addEventListener('click', () => scrollBy(scrollChunk()));
+
+    const maxScroll = () => track.scrollWidth / 2;
+    let animationId;
+    let last;
+    const speed = 0.08;
+
+    const animate = (timestamp) => {
+      if (last !== undefined) {
+        const delta = timestamp - last;
+        viewport.scrollLeft += delta * speed;
+        if (viewport.scrollLeft >= maxScroll()) {
+          viewport.scrollLeft -= maxScroll();
+        }
+      }
+      last = timestamp;
+      animationId = requestAnimationFrame(animate);
+    };
+
+    const pause = () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+        animationId = undefined;
+      }
+      last = undefined;
+    };
+
+    const play = () => {
+      if (!animationId) {
+        animationId = requestAnimationFrame(animate);
+      }
+    };
+
+    [viewport, prev, next].forEach((el) => {
+      el?.addEventListener('mouseenter', pause);
+      el?.addEventListener('mouseleave', play);
+    });
+
+    play();
   });
 })();
 </script>
